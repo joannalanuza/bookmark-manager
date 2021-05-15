@@ -1,0 +1,45 @@
+<h2 mat-dialog-title> Add Bookmark </h2>
+<div mat-dialog-content>
+    <form [formGroup]="bookmarkForm" class="bookmark-form">
+        <div class="form-fields-container">
+            <mat-form-field class="name-form-field">
+                <mat-label>Name</mat-label>
+                <input type="text" matInput formControlName="name" placeholder="Ex. Sample Site">
+                <mat-error *ngIf="hasError('name', 'required')">
+                    Name is required
+                </mat-error>
+            </mat-form-field>
+            <mat-form-field class="url-form-field">
+                <mat-label>Url</mat-label>
+                <input type="text" matInput formControlName="url" placeholder="Ex. https://sample.com">
+                <mat-error *ngIf="hasError('url', 'required')">
+                    Url is required
+                </mat-error>
+            </mat-form-field>
+            <mat-form-field class="group-form-field">
+                <mat-label>Group</mat-label>
+                <input type="text" matInput formControlName="group" placeholder="Ex. work / leisure / personal">
+                <mat-error *ngIf="hasError('group', 'required')">
+                    Group is required
+                </mat-error>
+            </mat-form-field>
+        </div>
+        <div class="dialog-action-buttons-container">
+            <button mat-raised-button
+                    color="primary"
+                    type="submit"
+                    class="dialog-confirm-btn"
+                    [disabled]="!bookmarkForm.valid"
+                    (click)="onSubmit()">
+                Save
+            </button>
+            <button mat-stroked-button
+                    color="primary"
+                    class="dialog-cancel-btn"
+                    (click)="onCancel()">
+                Cancel
+            </button>
+        </div>
+    </form>
+</div>
+

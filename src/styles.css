@@ -1,1 +1,122 @@
 /* You can add global styles to this file, and also import other style files */
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.side-nav {
+    min-width: 250px;
+}
+.bookmarks-table{
+    width: 100%;
+}
+.mat-cell, .mat-footer-cell {
+    padding: 8px;
+}
+.toolbar-menu-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    width: 100%;
+    margin-right: 8px;
+}
+.add-bookmark-btn {
+    background: white;
+}
+.item-action-heading {
+    min-width: 104px;
+}
+.item-action-heading,
+.item-action-buttons {
+    justify-content: flex-end;
+    flex: initial;
+}
+
+.item-action-buttons .edit-button {
+    margin-right: 16px;
+}
+.mat-sidenav-content {
+    min-height: 500px; /*to be updated*/
+}
+.sidenav-container .mat-expansion-panel-body {
+    padding: 0; /*to be updated*/
+}
+
+/*.sidenav-container .mat-list-base .mat-list-item .mat-list-item-content {*/
+    /*padding-left: 40px; !*to be updated*!*/
+/*}*/
+
+.sidenav-container .groups-expansion-panel {
+    box-shadow: none; /*to be updated*/
+}
+.bookmark-form .mat-form-field {
+    width: 100%;
+}
+.mat-toolbar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 10;
+    box-shadow: 0 2px 5px 0 rgb(0 0 0 / 30%);
+}
+.site-logo-container {
+    width: 40px;
+    height: 40px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 50%;
+    margin-left: 16px;
+}
+.site-logo-image {
+    display: inline;
+    margin: 0 auto;
+    height: 100%;
+    width: auto;
+}
+.edit-button:hover {
+    background-color: #673ab7c4;
+}
+.delete-button:hover {
+    background-color: #bd3329;
+}
+.mat-list-base {
+    padding-top: 0;
+}
+.mat-list-base .active-group {
+    background: #673ab71a;
+    color: #673ab7;
+    font-weight: 500;
+}
+.sidenav-container .mat-list-base {
+    padding-top: 0;
+}
+.sidenav-container .mat-list-base .all-group-list-item {
+    padding-top: 8px;
+}
+.dialog-action-buttons-container {
+    text-align: right;
+    margin-top: 24px;
+}
+.dialog-action-buttons-container .dialog-confirm-btn {
+    margin-right: 16px;
+}
+.dialog-confirm-btn,
+.dialog-cancel-btn {
+    width: 100px;
+}
+
+@media only screen and (max-width: 768px) {
+    .group-col-heading,
+    .group-col-content {
+        display: none;
+    }
+    .item-action-buttons .edit-button {
+        margin-right: 8px;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .main-bm-heading {
+        display: none;
+    }
+}

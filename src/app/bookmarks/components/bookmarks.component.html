@@ -1,0 +1,122 @@
+<div class="bookmark-page-container">
+    <!-- Page Toolbar -->
+    <mat-toolbar color="primary">
+        <mat-toolbar-row>
+            <button mat-icon-button (click)="snav.toggle()">
+                <mat-icon>menu</mat-icon>
+            </button>
+            <h1 class="main-bm-heading">Bookmark Manager</h1>
+            <div class="toolbar-menu-container">
+                <button class="add-bookmark-btn" mat-stroked-button color="primary" (click)="openDialog(false)">
+                    <span class="material-icons">add</span>
+                    Add Bookmark
+                </button>
+                <div class="site-logo-container">
+                    <img class="site-logo-image" src="https://www.fintechfutures.com/files/2020/07/ApoBank.jpg" alt="Site Logo">
+                </div>
+            </div>
+        </mat-toolbar-row>
+    </mat-toolbar>
+
+    <!-- Page Content -->
+    <mat-sidenav-container class="sidenav-container" [style.top.px]="mobileQuery.matches ? 56 : 64">
+        <!--Left Nav -->
+        <mat-sidenav #snav
+                     [opened]="mobileQuery.matches? false: true"
+                     [mode]="mobileQuery.matches ? 'over' : 'side'"
+                     [fixedInViewport]="mobileQuery.matches" fixedTopGap="56"
+                     class="side-nav"
+        >
+            <div *ngIf = "groups$ | async as groups">
+                <mat-nav-list>
+                    <mat-list-item
+                            class="all-group-list-item group-list-item"
+                            (click)="selectGroup('All')"
+                            [ngClass]="{'active-group' : selectedGroup == 'All'}"
+                    >
+                        <h4>All</h4>
+                     </mat-list-item>
+                    <mat-divider></mat-divider>
+                    <mat-accordion>
+                        <mat-expansion-panel class="groups-expansion-panel"
+                                             [expanded] = "panelOpenState"
+                                             (opened)="panelOpenState = true"
+                                             (closed)="panelOpenState = false">
+                            <mat-expansion-panel-header>
+                                <mat-panel-title class="all-group-label">
+                                    <h4>Groups</h4>
+                                </mat-panel-title>
+                            </mat-expansion-panel-header>
+                            <mat-list-item
+                                    class ="group-list-item"
+                                    *ngFor="let group of groups"
+                                    (click)="selectGroup(group)"
+                                    [ngClass]="{'active-group' : selectedGroup == group}"
+                            >
+                                <mat-icon class="group-list-item-icon" mat-list-icon >navigate_next</mat-icon>
+                                <span>{{group}}</span>
+                            </mat-list-item>
+                        </mat-expansion-panel>
+                    </mat-accordion>
+                </mat-nav-list>
+            </div>
+        </mat-sidenav>
+
+        <!-- Bookmark Listing -->
+        <mat-sidenav-content>
+            <div *ngIf = "bookmarks$ | async as bookmarks">
+                <mat-table [dataSource]="bookmarks" class="bookmarks-table">
+                    <!-- Name Column -->
+                    <ng-container matColumnDef="Name">
+                        <mat-header-cell *matHeaderCellDef>
+                            <h3>Name</h3>
+                        </mat-header-cell>
+                        <mat-cell *matCellDef="let bookmark"> {{bookmark.name}} </mat-cell>
+                    </ng-container>
+
+                    <!-- URL Column -->
+                    <ng-container matColumnDef="URL">
+                        <mat-header-cell *matHeaderCellDef>
+                            <h3>URL</h3>
+                        </mat-header-cell>
+                        <mat-cell *matCellDef="let bookmark">
+                            <a class="bookmark-link" href="{{bookmark.url}}" target="_blank">{{bookmark.url}}</a>
+                        </mat-cell>
+                    </ng-container>
+
+                    <!-- Group Column -->
+                    <ng-container matColumnDef="Group">
+                        <mat-header-cell class="group-col-heading" *matHeaderCellDef>
+                            <h3>Group</h3>
+                        </mat-header-cell>
+                        <mat-cell class="group-col-content" *matCellDef="let bookmark"> {{bookmark.group}} </mat-cell>
+                    </ng-container>
+
+                    <!-- Actions Column -->
+                    <ng-container matColumnDef="Actions">
+                        <mat-header-cell class="item-action-heading" *matHeaderCellDef></mat-header-cell>
+                        <mat-cell class="item-action-buttons" *matCellDef="let bookmark">
+                            <button (click)="openDialog(true, bookmark)"
+                                    mat-mini-fab
+                                    class="edit-button"
+                                    color="primary"
+                                    aria-label="edit icon">
+                                <mat-icon>edit</mat-icon>
+                            </button>
+                            <button (click)="openDeleteConfirmationDialog(bookmark)"
+                                    class="delete-button"
+                                    mat-mini-fab
+                                    color="warn"
+                                    aria-label="delete icon">
+                                <mat-icon>delete</mat-icon>
+                            </button>
+                        </mat-cell>
+                    </ng-container>
+
+                    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+                    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+                </mat-table>
+            </div>
+        </mat-sidenav-content>
+    </mat-sidenav-container>
+</div>
