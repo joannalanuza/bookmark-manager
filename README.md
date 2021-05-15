@@ -3,11 +3,11 @@
 * **NGRX for managing the state**
 * **Angular Material for the user interface**
 
-## Prerequisites
+## Pre-requisites
 * **Node 8.9+ and  NPM 5.5.1+  installed** - download from here https://nodejs.org/en/download/ and install
 
 ## Description of the solution
-####**Features**
+#### **Features**
 
 * Bookmark listing with name, url and group details
 * View bookmarks by group
