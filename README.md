@@ -1,13 +1,58 @@
 # Bookmark Manager
-
-- **Built with Angular 8**
-- **NGRX for managing the state**
-- **Angular Material for the user interface**
+* **Built with Angular 8**
+* **NGRX for managing the state**
+* **Angular Material for the user interface**
 
 ## Prerequisites
-- **Node 8.9+ and  NPM 5.5.1+  installed** - download from here https://nodejs.org/en/download/ and install
+* **Node 8.9+ and  NPM 5.5.1+  installed** - download from here https://nodejs.org/en/download/ and install
 
 ## Description of the solution
+**Bookmarks Module** - composed of components, models, services and NGRX Actions, Reducers, Effects and Selectors to manipulate the state of the Bookmarks data
+![Alt text](./src/assets/snippets/bm-module.PNG)
+
+#### Bookmark Components
+* **bookmarks.component** - main component for the bookmark manager page (renders toolbar, side nav and listing)
+* **bookmark-form-dialog.component** - displays bookmark form dialog for adding/editing bookmark
+* **delete-confirmation-dialog.component** - displays confirmation dialog upon deletion
+
+#### Bookmark Model
+* **bookmarks.model** = model interface for the Bookmark entity
+* **bookmarks.model** = model interface for the Bookmark entity
+
+#### Bookmark Service
+* **bookmarks.service** = used to interact with the REST API
+* **methods**
+  * createBookmark() - for adding new bookmark to db
+  * getBookmarks() - for getting all bookmarks from db
+  * editBookmark() - for updating a bookmark data in db
+  * deleteBookmark() - for deleting a bookmark data
+  
+#### Bookmark NGRX Actions
+* **loadBookmarks** = to Load Bookmarks
+* **addBookmark** = to Load Bookmarks
+* **addBookmarkSuccess** = to Load Bookmarks
+* **addBookmarkFailure** = to Load Bookmarks
+* **updateBookmark** = to Update a Bookmark
+* **deleteBookmark** = to Delete a Bookmark
+
+#### Bookmark NGRX Reducers
+* **addBookmarkSuccess** = adds new data and returns a newly added bookmark to the state
+* **loadBookmarksSuccess** = adds and returns all bookmarks fetched to the state
+* **loadBookmarksFailure** = returns error to the state if bookmark fetching has failed
+* **updateBookmark** = updates and returns updated bookmark to the state
+* **deleteBookmarkSuccess** = removes data and returns updated state upon success
+* **deleteBookmarkFailure** = returns error to the state if bookmark deletion has failed
+
+#### Bookmark NGRX Selectors
+* **selectBookmarks** = retrieves all the bookmark entities and returns an observable
+* **selectBookmarkGroups** = retrieves all the bookmark group entities and returns an observable
+* **selectBookmarksByGroup** = retrieves all the bookmark entities by group and returns an observable
+
+#### Bookmark NGRX Effects
+* **loadBookmarks$** = triggered by loadBookmarks and calls loadBookmarksSuccess or loadBookmarksFailure
+* **createBookmark$** = triggered by addBookmarkSuccess and calls addBookmarkSuccess or addBookmarkFailure
+* **updateBookmark$** = triggered by updateBookmark
+* **deleteBookmark$** = triggered by deleteBookmark and calls deleteBookmarkSuccess or deleteBookmarkFailure
 
 
 ## Screenshots of the working solution
@@ -55,10 +100,4 @@ ng serve
 7.) Once compilation is successful, open browser and go to http://localhost:4200/bookmarks
 
 8.) You should now be able to access the bookmarks manager page
-
-## Running unit tests
-
-
-## Mockup API
-
 
