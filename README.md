@@ -5,13 +5,12 @@
 - **Angular Material for the user interface**
 
 ## Prerequisites
-- **Node 8.9 and  NPM 5.5.1+  installed** - download from here https://nodejs.org/en/download/ and install
+- **Node 8.9+ and  NPM 5.5.1+  installed** - download from here https://nodejs.org/en/download/ and install
 
 ## Description of the solution
 
 
 ## Screenshots of the working solution
-
 
 
 ## Instructions how to run the application
