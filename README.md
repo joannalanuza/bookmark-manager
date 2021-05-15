@@ -7,6 +7,15 @@
 * **Node 8.9+ and  NPM 5.5.1+  installed** - download from here https://nodejs.org/en/download/ and install
 
 ## Description of the solution
+####**Features**
+
+* Bookmark listing with name, url and group details
+* View bookmarks by group
+* Add new bookmark to the list
+* Delete a bookmark
+* Edit an existing bookmark
+
+
 **Bookmarks Module** - composed of components, models, services and NGRX Actions, Reducers, Effects and Selectors to manipulate the state of the Bookmarks data
 
 ![Alt text](./src/assets/snippets/bm-module.PNG)
