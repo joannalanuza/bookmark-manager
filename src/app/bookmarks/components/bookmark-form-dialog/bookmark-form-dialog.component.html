@@ -1,4 +1,8 @@
-<h2 mat-dialog-title> Add Bookmark </h2>
+<h2 mat-dialog-title>
+    <span *ngIf = "isEditForm">Edit</span>
+    <span *ngIf = "!isEditForm">Add</span>
+    Bookmark
+</h2>
 <div mat-dialog-content>
     <form [formGroup]="bookmarkForm" class="bookmark-form">
         <div class="form-fields-container">
