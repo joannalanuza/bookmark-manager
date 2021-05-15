@@ -18,7 +18,6 @@
 
 #### Bookmark Model
 * **bookmarks.model** = model interface for the Bookmark entity
-* **bookmarks.model** = model interface for the Bookmark entity
 
 #### Bookmark Service
 * **bookmarks.service** = used to interact with the REST API
@@ -30,11 +29,15 @@
   
 #### Bookmark NGRX Actions
 * **loadBookmarks** = to Load Bookmarks
-* **addBookmark** = to Load Bookmarks
-* **addBookmarkSuccess** = to Load Bookmarks
-* **addBookmarkFailure** = to Load Bookmarks
+* **loadBookmarksSuccess** = action to call for load success
+* **loadBookmarksFailure** = action to call for load failure
+* **addBookmark** = to add Bookmarks
+* **addBookmarkSuccess** = action to call for add success
+* **addBookmarkFailure** = action to call for add failure
 * **updateBookmark** = to Update a Bookmark
 * **deleteBookmark** = to Delete a Bookmark
+* **deleteBookmarkSuccess** = action to call for delete success
+* **deleteBookmarkFailure** = action to call for delete failure
 
 #### Bookmark NGRX Reducers
 * **addBookmarkSuccess** = adds new data and returns a newly added bookmark to the state
