@@ -8,12 +8,13 @@
 
 ## Description of the solution
 **Bookmarks Module** - composed of components, models, services and NGRX Actions, Reducers, Effects and Selectors to manipulate the state of the Bookmarks data
+
 ![Alt text](./src/assets/snippets/bm-module.PNG)
 
 #### Bookmark Components
 * **bookmarks.component** - main component for the bookmark manager page (renders toolbar, side nav and listing)
 * **bookmark-form-dialog.component** - displays bookmark form dialog for adding/editing bookmark
-* **delete-confirmation-dialog.component** - displays confirmation dialog upon deletion
+* **delete-confirmation-dialog.component** - displays confirmation dialog before deleting
 
 #### Bookmark Model
 * **bookmarks.model** = model interface for the Bookmark entity
