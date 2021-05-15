@@ -12,13 +12,13 @@
 
 ## Screenshots of the working solution
 #### Bookmark Listing - Initial View
-![Alt text](./src/assets/snippets/bm-1.png?raw=true)
+![Alt text](./src/assets/snippets/bm-1.PNG)
 
 #### Add Bookmark Dialog
-![Alt text](./src/assets/snippets/bm-add-1.png)
+![Alt text](./src/assets/snippets/bm-add-1.PNG)
 
 #### After Add - Bookmark Has Been Added in the List
-![Alt text](./src/assets/snippets/bm-add-3.png)
+![Alt text](./src/assets/snippets/bm-add-3.PNG)
 
 #### Delete Bookmark Dialog
 ![Alt text](./src/assets/snippets/bm-delete-1-boxed.png)
