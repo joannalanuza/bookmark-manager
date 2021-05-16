@@ -108,6 +108,7 @@ npm run server
 ```
 6.) Open another CLI Window, cd to bookmark-manager root folder, and run the following
 ```sh
+npm install -g @angular/cli@8.3.2
 ng serve
 ```
 7.) Once compilation is successful, open browser and go to http://localhost:4200/bookmarks
